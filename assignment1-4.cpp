@@ -47,8 +47,8 @@ void erase_bullet(int x, int y) {
 }
 
 int main() {
-	int x = 38, y = 20; //ship(x,y)
-	int bx[5], by[5], i; //bullet(x,y)
+	int x = 38, y = 20; 
+	int bx[5], by[5], i; 
 	int bulletStatus[5] = { 0,0,0,0,0 };
 	char ch = ' ';
 	int direction = 0;
@@ -69,10 +69,10 @@ int main() {
 			}
 			if (ch == ' ' && bulletStatus[status] == 0) {
 				bulletStatus[status] = 1;
-				bx[status] = x + 3; //setting default value
+				bx[status] = x + 3; 
 				by[status] = y - 1;
-				status++; //declare every index
-				status %= 5; //reset status ==> 0 ; for aim 5 bullets again
+				status++; 
+				status %= 5; 
 			}
 			fflush(stdin);
 		}
@@ -87,7 +87,7 @@ int main() {
 			draw_ship(++x, y);
 			Sleep(250);
 		}
-		for (i = 0; i < 5; i++) { //to aim 5 bullets per 1 screen
+		for (i = 0; i < 5; i++) { 
 			if (bulletStatus[i] == 1) {
 				erase_bullet(bx[i], by[i]);
 				if (by[i] < 1) { 
